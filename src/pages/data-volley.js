@@ -15,8 +15,8 @@ const DataVolleyPage = () => (
           software is a commercially available software boasting support from a number of influential
           volleyball leagues including the Italian and American leagues.  A modified, limited
           version of the software is also made available to the CEV for taking statistics at all
-          CEV events including the European Champions League.  The limited version can be downloaded 
-          <a href="http://www.dataproject.com/cev" target="_blank" rel="noopener noreferrer">here</a>,
+          CEV events including the European Champions League.  The limited version can be
+          downloaded <a href="http://www.dataproject.com/cev" target="_blank" rel="noopener noreferrer">here</a>,
           the trial software includes a user manual to explain all the concepts.</p>
 
           <p>DataVolley only requires a single person to take statistics for a game, although a
