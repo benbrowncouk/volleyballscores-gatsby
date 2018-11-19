@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: "VolleyballScores.co.uk",
     author: "Ben Brown",
-    description: "A website for VolleyballScores.co.uk based on the Photon Gatsby.js Theme by HTML5 UP"
+    description: "A website for VolleyballScores.co.uk based on the Photon Gatsby.js Theme by HTML5 UP",
+    siteUrl: 'https://www.volleyballscores.co.uk'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -37,6 +38,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    'gatsby-plugin-sitemap'
   ],
 }
