@@ -23,7 +23,9 @@ class Homepage extends React.Component {
 
         return (
             <Layout>
-                <Helmet title={siteTitle}/>
+                <Helmet title={siteTitle}>
+                  <meta name="google-site-verification" content="7xDx0JgfYbkerG_sToIzEZM487nXsRpPhDvdQBaQaNY" />
+                </Helmet>
 
                 <section id="one" className="main style1">
                     <div className="grid-wrapper">
@@ -120,7 +122,7 @@ class Homepage extends React.Component {
                         <header className="major">
                             <h2>Want to find out more?</h2>
                         </header>
-                        <p>If you would like more information or would like to use the facilities provided by this site for an event you are hosting, please contact us using the for below.</p>
+                        <p>If you would like more information or would like to use the facilities provided by this site for an event you are hosting, please contact us using the form below.</p>
                       </div>
                       <div className="col-12">
                         <form method="post" action="#" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -137,6 +139,7 @@ class Homepage extends React.Component {
                               <label htmlFor="message">Message</label>
                               <textarea name="message" id="message" rows="6"></textarea>
                           </div>
+                          <div data-netlify-recaptcha></div>
                           <ul className="actions">
                               <li><input type="submit" value="Send Message" className="special" /></li>
                               <li><input type="reset" value="Clear" /></li>
