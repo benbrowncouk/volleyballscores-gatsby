@@ -125,8 +125,7 @@ class Homepage extends React.Component {
                         <p>If you would like more information or would like to use the facilities provided by this site for an event you are hosting, please contact us using the form below.</p>
                       </div>
                       <div className="col-12">
-                        <form method="post" action="#" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
-                          <input type="hidden" name="bot-field" />
+                        <form method="post" action="#" name="contact" data-netlify="true">
                           <div className="field half first">
                               <label htmlFor="name">Name</label>
                               <input type="text" name="name" id="name" />
