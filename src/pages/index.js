@@ -125,7 +125,8 @@ class Homepage extends React.Component {
                         <p>If you would like more information or would like to use the facilities provided by this site for an event you are hosting, please contact us using the form below.</p>
                       </div>
                       <div className="col-12">
-                        <form method="post" action="#" name="contact" data-netlify="true">
+                        <form method="post" action="#" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+                          <input type="hidden" name="bot-field" />
                           <div className="field half first">
                               <label htmlFor="name">Name</label>
                               <input type="text" name="name" id="name" />
@@ -138,7 +139,6 @@ class Homepage extends React.Component {
                               <label htmlFor="message">Message</label>
                               <textarea name="message" id="message" rows="6"></textarea>
                           </div>
-                          <div data-netlify-recaptcha="true"></div>
                           <ul className="actions">
                               <li><input type="submit" value="Send Message" className="special" /></li>
                               <li><input type="reset" value="Clear" /></li>
