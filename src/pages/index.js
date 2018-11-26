@@ -10,21 +10,19 @@ import { faServer } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../components/layout';
 
-import { Link } from "gatsby"
-
-import pic01 from '../assets/images/olympics.jpg'
-import pic02 from '../assets/images/datavolley.jpg'
-import pic03 from '../assets/images/paralympics.jpg'
-import pic04 from '../assets/images/VIS.jpg'
+import { Link, graphql } from "gatsby"
+import Img from "gatsby-image";
 
 class Homepage extends React.Component {
-    render() {
+    render(props) {
         const siteTitle = "VolleyballScores.co.uk - Volleyball Scores and Statistics";
 
         return (
             <Layout>
                 <Helmet title={siteTitle}>
                   <meta name="google-site-verification" content="7xDx0JgfYbkerG_sToIzEZM487nXsRpPhDvdQBaQaNY" />
+                  <meta name="Description" content="Live Volleyball Scores and Statistics from UK Volleyball Events" />
+                  <html lang="en" />
                 </Helmet>
 
                 <section id="one" className="main style1">
@@ -44,7 +42,7 @@ class Homepage extends React.Component {
                             will be used.</p>
                         </div>
                         <div className="col-6">
-                            <span className="image fit"><img src={pic01} alt="" /></span>
+                            <span className="image fit"><Img fluid={this.props.data.imageOne.childImageSharp.fluid} alt="" /></span>
                         </div>
                     </div>
                 </section>
@@ -89,7 +87,8 @@ class Homepage extends React.Component {
                         </div>
 
                         <div className="col-4">
-                            <span className="image fit"><img src={pic02} alt="" /></span>
+                            <span className="image fit">
+                              <Img fluid={this.props.data.imageTwo.childImageSharp.fluid} alt="" /></span>
                             <h3>DataProject DataVolley</h3>
                             <p>The most widely used statistics software for volleyball across the world. Used at all Volleyball England and CEV events.</p>
                             <ul className="actions">
@@ -97,7 +96,8 @@ class Homepage extends React.Component {
                             </ul>
                         </div>
                         <div className="col-4">
-                            <span className="image fit"><img src={pic03} alt="" /></span>
+                            <span className="image fit">
+                              <Img fluid={this.props.data.imageThree.childImageSharp.fluid} alt="" /></span>
                             <h3>DataProject e-scoresheet</h3>
                             <p>Software to replace the traditional paper scoresheet for volleyball. Used across all CEV events.</p>
                             <ul className="actions">
@@ -105,7 +105,8 @@ class Homepage extends React.Component {
                             </ul>
                         </div>
                         <div className="col-4">
-                            <span className="image fit"><img src={pic04} alt="" /></span>
+                            <span className="image fit">
+                              <Img fluid={this.props.data.imageFour.childImageSharp.fluid} alt="" /></span>
                             <h3>VIS</h3>
                             <p>The original statistics software produced by the FIVB. Used mainly for FIVB events.</p>
                             <ul className="actions">
@@ -125,7 +126,7 @@ class Homepage extends React.Component {
                         <p>If you would like more information or would like to use the facilities provided by this site for an event you are hosting, please contact us using the form below.</p>
                       </div>
                       <div className="col-12">
-                        <form method="post" action="#" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <form method="post" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
                           <input type="hidden" name="bot-field" />
                           <div className="field half first">
                               <label htmlFor="name">Name</label>
@@ -153,3 +154,30 @@ class Homepage extends React.Component {
 }
 
 export default Homepage;
+
+export const fluidImage = graphql`
+fragment fluidImage on File {
+  childImageSharp {
+    fluid(maxWidth: 800) {
+      ...GatsbyImageSharpFluid_tracedSVG
+    }
+  }
+}
+`;
+
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "olympics.jpg" }) {
+    ...fluidImage
+  }
+  imageTwo: file(relativePath: { eq: "datavolley.jpg" }) {
+    ...fluidImage
+  }
+  imageThree: file(relativePath: { eq: "paralympics.jpg" }) {
+    ...fluidImage
+  }
+  imageFour: file(relativePath: { eq: "VIS.jpg" }) {
+    ...fluidImage
+  }
+}
+`;

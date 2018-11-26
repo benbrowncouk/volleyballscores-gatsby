@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'VolleyballScores.co.uk',
-        short_name: 'Volleyball Scores',
+        short_name: 'VolleyballSc',
         start_url: '/',
         background_color: '#4a87d3',
         theme_color: '#4a87d3',
@@ -37,8 +37,18 @@ module.exports = {
         cookieDomain: "volleyballscores.co.uk",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `img`,
+        path: `${__dirname}/src/assets/images/`
+      }
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-netlify`
   ],
 }
