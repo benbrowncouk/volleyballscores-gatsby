@@ -71,7 +71,7 @@ const DataVolleyPage = () => (
           most teams have no budget!</p>
 
           <ul className="actions">
-              <li><Link to="/" className="button">Back</Link></li>
+            <li><Link to="/" className="button">Back</Link></li>
           </ul>
         </div>
       </div>

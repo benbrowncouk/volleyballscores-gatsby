@@ -14,7 +14,7 @@ const EScorePage = () => (
           <p>Recently the CEV announced that they were trialling the use of Electronic
           Scoresheet software produced by DataProject (the same company that produce DataVolley).
           This software can currently be downloaded from <a href="http://www.dataproject.com/cev"
-          target="_blank" rel="noopener noreferrer">here</a> if you wish to trial this out.</p>
+              target="_blank" rel="noopener noreferrer">here</a> if you wish to trial this out.</p>
 
           <p>At this moment in time I have no information on the software and have only
           played with many of the features, however it certainly looks promising.  My
@@ -28,7 +28,7 @@ const EScorePage = () => (
           <p>Once I have used this software in a tournament I will post back my thoughts.</p>
 
           <ul className="actions">
-              <li><Link to="/" className="button">Back</Link></li>
+            <li><Link to="/" className="button">Back</Link></li>
           </ul>
         </div>
       </div>
